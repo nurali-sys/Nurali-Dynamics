@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVE-XL | NURALI DYNAMICS</title>
+    <style>
+        :root {
+            --bg-color: #030a14; /* Терең мұхит түсі */
+            --text-color: #ffffff;
+            --text-muted: #a0b3c6;
+            --border-color: #1e2d3d;
+            --accent-color: #00d4ff; /* Су асты жарқылы */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(3, 10, 20, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo a {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            position: relative;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 7rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            line-height: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 800px;
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-bottom: 6rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #050f1a;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Specs Grid */
+        .specs-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-bottom: 8rem;
+        }
+
+        .spec {
+            border-right: 1px solid var(--border-color);
+            padding-right: 2rem;
+        }
+
+        .spec:last-child {
+            border-right: none;
+        }
+
+        .spec h2 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .spec p {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+            margin-bottom: 8rem;
+        }
+
+        .feature {
+            border-top: 2px solid var(--border-color);
+            padding-top: 2rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .feature:hover {
+            border-color: var(--accent-color);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .feature p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Build Qualities / Capabilities */
+        .capabilities {
+            margin-bottom: 8rem;
+        }
+
+        .cap-item {
+            display: flex;
+            align-items: flex-start;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+        }
+
+        .cap-number {
+            font-family: monospace;
+            font-size: 1rem;
+            color: var(--accent-color);
+            margin-right: 3rem;
+            opacity: 0.8;
+        }
+
+        .cap-content h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .cap-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: #02060d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 5rem; }
+            .specs-container { grid-template-columns: repeat(2, 1fr); }
+            .spec { border-right: none; margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1.5rem;
+            }
+            .container { padding: 0 2rem; }
+            .hero { padding: 4rem 0 2rem; }
+            .hero h1 { font-size: 3.5rem; }
+            .cap-item { flex-direction: column; }
+            .cap-number { margin-bottom: 1rem; }
+            .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">NURALI DYNAMICS</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#">DIVE-XL</a>
+            <a href="#">Қабілеттер</a>
+            <a href="#">Миссия</a>
+            <a href="#">Байланыс</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="tagline">Үлкен Өлшемді Автономды Су Асты Көлігі [XL-AUV]</span>
+            <h1>DIVE-XL</h1>
+            <p class="hero-description">
+                DIVE-XL – ұзақ қашықтықтарды, ұзартылған уақытты және әртүрлі тереңдіктерді талап ететін қорғаныс немесе коммерциялық миссиялар үшін бірнеше ірі жүктемелерді біріктіретін қуатты платформа.
+            </p>
+        </section>
+
+        <section class="video-section">
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline>
+                    <source src="dive.mp4" type="video/mp4">
+                    Сіздің браузеріңіз бейнені қолдамайды.
+                </video>
+            </div>
+        </section>
+
+        <section class="specs-container">
+            <div class="spec">
+                <h2>6,000 m</h2>
+                <p>Максималды Тереңдік</p>
+            </div>
+            <div class="spec">
+                <h2>10+ Күн</h2>
+                <p>Автономиялық Жұмыс</p>
+            </div>
+            <div class="spec">
+                <h2>ҮЛКЕН</h2>
+                <p>Жүктеме Сыйымдылығы</p>
+            </div>
+            <div class="spec">
+                <h2>3D</h2>
+                <p>Басып Шығарылған Корпус</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Жүйелік Ерекшеліктер</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Екі Нүктелі Көтеру</h3>
+                    <p>Екі нүктелі көтеру интерфейсімен жабдықталған DIVE-XL әртүрлі кемелер мен пирстерден оңай ұшырылып, қайта қабылдана алады. Арнайы іске қосу жабдықтарын қажет етпейді.</p>
+                </div>
+                <div class="feature">
+                    <h3>Жүктеме Жеткізу Жүйесі</h3>
+                    <p>Copperhead және Seabed Sentry сияқты теңіз жүктемелерін тасымалдауға және автономды түрде су түбіне орналастыруға қабілетті.</p>
+                </div>
+                <div class="feature">
+                    <h3>Конфигурацияланатын Модульдер</h3>
+                    <p>Бір уақытта үш жүктеме модулін немесе бір аса үлкен жүктеме модулін тасымалдай алады. Миссияға байланысты жылдам өзгертуге болады.</p>
+                </div>
+                <div class="feature">
+                    <h3>Толық Электрлік Қуат</h3>
+                    <p>Миссия уақытын ұзарту және платформаның өмір сүру қабілетін арттыру үшін жер бетіне шықпай-ақ ұзақ қашықтыққа, ұзақ мерзімді миссияларды орындайды.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="capabilities">
+            <h2 class="section-title">Негізгі Артықшылықтар</h2>
+            
+            <div class="cap-item">
+                <span class="cap-number">01</span>
+                <div class="cap-content">
+                    <h3>Кеңейтілген Су Асты Операциялары</h3>
+                    <p>Толық электрлік қозғалтқыш жүйесін пайдалана отырып, DIVE-XL өте төмен акустикалық қолтаңбамен жұмыс істейді және терең су астында ұзақ уақыт бойы автономды әрекет ете алады.</p>
+                </div>
+            </div>
+
+            <div class="cap-item">
+                <span class="cap-number">02</span>
+                <div class="cap-content">
+                    <h3>Жылдам Бейімделетін Платформа</h3>
+                    <p>Ашық жүйелер архитектурасы үшінші тарап жүктемелерін жылдам біріктіруге мүмкіндік береді. Бұл оны барлау, картаға түсіру немесе соққы жасау сияқты әртүрлі миссияларға өте икемді етеді.</p>
+                </div>
+            </div>
+
+            <div class="cap-item">
+                <span class="cap-number">03</span>
+                <div class="cap-content">
+                    <h3>Төмен Логистика</h3>
+                    <p>Стандартты 40 футтық тасымалдау контейнеріне сыяды және әуе, кеме немесе жүк көлігімен тасымалдана алады. Күрделі инфрақұрылымды қажет етпейді.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NURALI DYNAMICS. Барлық құқықтар қорғалған.</p>
+    </footer>
+
+</body>
+</html>
