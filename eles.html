@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELES-X | NURALI DYNAMICS</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #ffffff;
+            --text-muted: #888888;
+            --border-color: #333333;
+            --accent: #d4d4d4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        /* Logo Styling - Updated for Link */
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-decoration: none; /* Астын сызуды алып тастау */
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-muted);
+        }
+
+        /* Hero Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .hero {
+            padding: 8rem 0 4rem;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .hero-description {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent);
+            max-width: 900px;
+            line-height: 1.5;
+            margin-bottom: 4rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-bottom: 6rem;
+            width: 100%;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #111;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .video-wrapper video,
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Specifications */
+        .specs-container {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-bottom: 6rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .spec {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .spec h2 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec p {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+        }
+
+        /* Features */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .feature {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Build Qualities */
+        .build-qualities {
+            margin-bottom: 8rem;
+        }
+
+        .quality {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+        }
+
+        .quality h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .quality p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+            }
+            .container {
+                padding: 0 2rem;
+            }
+            .hero {
+                padding: 4rem 0 2rem;
+            }
+            .hero h1 {
+                font-size: 4rem;
+            }
+            .hero-description {
+                font-size: 1.25rem;
+            }
+            .quality {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">NURALI DYNAMICS</a>
+        <nav class="nav-links">
+            <a href="#">Өнімдер</a>
+            <a href="#">Компания</a>
+            <a href="#">Миссия</a>
+            <a href="#">Жаңалықтар</a>
+            <a href="#">Мансап</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="tagline">Автономды әуе көлігі [AAV]</span>
+            <h1>ELES-X</h1>
+            <p class="hero-description">
+                ELES-X – бұл ұлғайтылған қашықтық пен көп жүк көтеру қабілетін экспедициялық жинақылықпен үйлестіре отырып, тактикалық шепте интуитивті автономияны қамтамасыз ететін экспедициялық, үнсіз және модульдік платформа.
+            </p>
+        </section>
+
+        <section class="video-section">
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline>
+                    <source src="ghost.mp4" type="video/mp4">
+                    Browser does not support video.
+                </video>
+            </div>
+        </section>
+
+        <section class="specs-container">
+            <div class="spec">
+                <h2>80 мин</h2>
+                <p>Крейсерлік ұшу уақыты</p>
+            </div>
+            <div class="spec">
+                <h2>25 км</h2>
+                <p>Қашықтық (15.5 миль)</p>
+            </div>
+            <div class="spec">
+                <h2>11 кг</h2>
+                <p>Жүктеме сыйымдылығы (25 фунт)</p>
+            </div>
+            <div class="spec">
+                <h2>25 кг</h2>
+                <p>Максималды ұшу салмағы (55 фунт)</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Жүйе Мүмкіндіктері</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Реттелетін аспа опциялары</h3>
+                    <p>Электронды-оптикалық (EO), ұзын толқынды инфрақызыл (LWIR), орташа толқынды инфрақызыл (MWIR) және лазерлік нысана көрсеткіш опцияларын қамтиды.</p>
+                </div>
+                <div class="feature">
+                    <h3>Модульдік миссиялық жүктемелер</h3>
+                    <p>Далада ауыстырылатын жүктеме бөлімдері және стандартты бағыттағыш жағдайды жақсырақ бақылау және көп мақсатты икемділік үшін салмағы 25 фунтқа (11 кг) дейінгі бірнеше жүктемені қолдайды.</p>
+                </div>
+                <div class="feature">
+                    <h3>Жалғыз роторлы қозғалтқыш</h3>
+                    <p>3 осьті маневрлік ELES-X-ке байқалу мүмкіндігін азайта отырып, сенсор конфигурациясының тиімділігін оңтайландырып, бір орнында қалықтауға және бақылауға мүмкіндік береді.</p>
+                </div>
+                <div class="feature">
+                    <h3>Ықшам және тасымалданатын жабдық</h3>
+                    <p>Көлемі 8 текше футтан аз және жұқа тактикалық мылтық қорабына оңай жиналады, бұл тасымалдауды барынша жеңілдетеді.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="build-qualities">
+            <h2 class="section-title">Құрастыру сапасы</h2>
+            <div class="quality">
+                <h3>Төзімді жүйе дизайны</h3>
+                <p>ELES-X байланыс деңгейі төмен және қолжетімсіз орталарда жоғары төзімділікті қамтамасыз ету үшін ең жаңа навигациялық және коммуникациялық технологиялардың бірнеше қабатын пайдаланады.</p>
+            </div>
+            <div class="quality">
+                <h3>Миссиямен бірге дамиды</h3>
+                <p>ELES-X жаңа мүмкіндіктерді үздіксіз біріктіру үшін стандартты бағыттағышты, далада ауыстырылатын жүктеме модульдерін және бағдарламалық қамтамасыз етілетін архитектураны пайдаланады.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NURALI DYNAMICS. Барлық құқықтар қорғалған.</p>
+    </footer>
+
+</body>
+</html>
