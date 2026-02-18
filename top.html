@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP-BSY | NURALI DYNAMICS</title>
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --text-color: #ffffff;
+            --text-muted: #999999;
+            --border-color: #333333;
+            --accent-color: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo a {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-muted);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+        }
+
+        .category-tag {
+            display: block;
+            color: var(--text-muted);
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 7rem;
+            line-height: 0.9;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-desc {
+            max-width: 700px;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 4rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-bottom: 6rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Specs Grid */
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-bottom: 6rem;
+        }
+
+        .spec-item h3 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            font-family: monospace;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            margin-bottom: 8rem;
+        }
+
+        .feature h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .feature p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Capabilities List */
+        .capabilities {
+            margin-bottom: 8rem;
+        }
+
+        .cap-row {
+            display: flex;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            align-items: baseline;
+        }
+
+        .cap-number {
+            font-family: monospace;
+            color: var(--text-muted);
+            margin-right: 2rem;
+            font-size: 1rem;
+        }
+
+        .cap-content {
+            flex: 1;
+        }
+
+        .cap-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .cap-content p {
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-family: monospace;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 5rem; }
+            .specs { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 1.5rem 2rem; }
+            .container { padding: 0 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            .hero h1 { font-size: 3.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .cap-row { flex-direction: column; gap: 1rem; }
+            .specs { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">NURALI DYNAMICS</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#">TOP-BSY</a>
+            <a href="#">Қабілеттер</a>
+            <a href="#">Сипаттамалар</a>
+            <a href="#">Байланыс</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="category-tag">Экспедициялық C2 Платформасы</span>
+            <h1>TOP-BSY</h1>
+            <p class="hero-desc">
+                TOP-BSY – әлемнің кез келген нүктесінде миссиялық автономияны, AI есептеулерін және қауіпсіз байланысты қамтамасыз ететін жедел орналастырылатын командалық орталық.
+            </p>
+        </section>
+
+        <section class="video-section">
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline>
+                    <source src="menace.mp4" type="video/mp4">
+                    Browser doesn't support video.
+                </video>
+            </div>
+        </section>
+
+        <section class="specs">
+            <div class="spec-item">
+                <h3>5 мин</h3>
+                <p>Орналастыру уақыты</p>
+            </div>
+            <div class="spec-item">
+                <h3>AI/ML</h3>
+                <p>Кіріктірілген Есептеу</p>
+            </div>
+            <div class="spec-item">
+                <h3>24/7</h3>
+                <p>Үздіксіз жұмыс</p>
+            </div>
+            <div class="spec-item">
+                <h3>IP67</h3>
+                <p>Қорғаныс деңгейі</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">Жүйе шолуы</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h4>Экспедициялық Есептеу Күші</h4>
+                    <p>TOP-BSY алдыңғы шептегі операциялар үшін қуатты серверлік инфрақұрылымды шағын, тасымалданатын корпустарға сыйғызады. Бұл бұлттық технологияларды интернетсіз ортада қолдануға мүмкіндік береді.</p>
+                </div>
+                <div class="feature">
+                    <h4>Lattice Интеграциясы</h4>
+                    <p>Барлық автономды жүйелерді бір орталықтан басқарыңыз. TOP-BSY Nurali Dynamics-тің Lattice ОЖ-мен толықтай интеграцияланған, бұл сенсорлар мен эффектілерді бірыңғай желіге біріктіреді.</p>
+                </div>
+                <div class="feature">
+                    <h4>Жаһандық Байланыс</h4>
+                    <p>Жүйе көп арналы байланыс модульдерімен (SATCOM, 5G, RF) жабдықталған, бұл тіпті ең шалғай аймақтарда да тұрақты командалық басқаруды қамтамасыз етеді.</p>
+                </div>
+                <div class="feature">
+                    <h4>Модульдік Архитектура</h4>
+                    <p>Миссияның қажеттіліктеріне қарай есептеу модульдерін, сақтау құрылғыларын және қуат көздерін жылдам ауыстырыңыз немесе кеңейтіңіз.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="capabilities">
+            <h2 class="section-title">Негізгі Артықшылықтар</h2>
+            
+            <div class="cap-row">
+                <span class="cap-number">01</span>
+                <div class="cap-content">
+                    <h3>Жедел Орналастыру</h3>
+                    <p>Дәстүрлі TOC (Тактикалық Операциялық Орталық) құру сағаттарды немесе күндерді алады. TOP-BSY жүйесін екі адам 5 минут ішінде толық жұмыс күйіне келтіре алады.</p>
+                </div>
+            </div>
+
+            <div class="cap-row">
+                <span class="cap-number">02</span>
+                <div class="cap-content">
+                    <h3>Қауіпсіз Деректерді Өңдеу</h3>
+                    <p>Деректерді тікелей жинау орнында өңдеу арқылы шешім қабылдау уақытын қысқартыңыз. Жүйе киберқауіпсіздіктің ең жоғары стандарттарына сай жасалған.</p>
+                </div>
+            </div>
+
+            <div class="cap-row">
+                <span class="cap-number">03</span>
+                <div class="cap-content">
+                    <h3>Энергия Тәуелсіздігі</h3>
+                    <p>Кіріктірілген батареялар және күн энергиясымен қуаттау мүмкіндігі TOP-BSY жүйесіне сыртқы қуат көздерінсіз ұзақ уақыт жұмыс істеуге мүмкіндік береді.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NURALI DYNAMICS. Құқықтар қорғалған.</p>
+    </footer>
+
+</body>
+</html>
