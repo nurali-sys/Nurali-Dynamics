@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карьера | Nurali Dynamics</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #111111;
+            --text-color: #ffffff;
+            --accent-color: #333333;
+            --link-color: #aaaaaa;
+            --highlight: #ffffff;
+            --font-main: 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            color: var(--link-color);
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--text-color);
+        }
+
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 10% 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Jobs Grid */
+        .jobs-section {
+            padding: 40px 10% 80px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .job-card {
+            background-color: var(--card-bg);
+            border: 1px solid #222;
+            padding: 25px;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .job-card:hover {
+            border-color: #555;
+            transform: translateY(-3px);
+        }
+
+        .job-dept {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .job-location {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: auto;
+            color: #fff;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 2px;
+            width: fit-content;
+        }
+
+        .apply-btn:hover {
+            border-bottom-color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 10%;
+            border-top: 1px solid #222;
+            background-color: #050505;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 { font-size: 1.2rem; margin-bottom: 15px; }
+        .footer-brand p { color: #666; max-width: 300px; font-size: 0.9rem; }
+        .footer-col h5 { color: #fff; margin-bottom: 20px; font-size: 0.9rem; text-transform: uppercase; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: #666; font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid #222; padding-top: 20px; display: flex; justify-content: space-between; color: #444; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            nav ul { display: none; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Nurali Dynamics</a></div>
+        <nav>
+            <ul>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="#">Мүмкіндіктер</a></li>
+                <li><a href="#">Жаңалықтар</a></li>
+                <li><a href="careers.html" style="color: #fff;">Карьера</a></li>
+                <li><a href="#">Контактілер</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <section class="hero">
+        <h1>Болашақты Бізбен Бірге Құр</h1>
+        <p>Біз ең қиын инженерлік мәселелерді шешу үшін батыл, талантты және мақсатты мамандарды іздейміз.</p>
+    </section>
+
+    <section class="jobs-section">
+        <div class="jobs-grid">
+            
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Software Engineering</div>
+                    <div class="job-title">Senior AI Engineer (Computer Vision)</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Software Engineering</div>
+                    <div class="job-title">Backend Developer (Go/C++)</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Software Engineering</div>
+                    <div class="job-title">Frontend Developer (React/WebGL)</div>
+                    <div class="job-location">Astana • Гибрид</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Software Engineering</div>
+                    <div class="job-title">Embedded Systems Engineer</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Autonomy</div>
+                    <div class="job-title">Flight Control Engineer</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Autonomy</div>
+                    <div class="job-title">Simulation Engineer</div>
+                    <div class="job-location">Remote • Қашықтан</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Hardware</div>
+                    <div class="job-title">Mechanical Engineer (Robotics)</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Hardware</div>
+                    <div class="job-title">Electrical Engineer (PCB Design)</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Hardware</div>
+                    <div class="job-title">FPGA Engineer</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Manufacturing</div>
+                    <div class="job-title">Production Manager</div>
+                    <div class="job-location">Oral (Uralsk) • Зауыт</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Manufacturing</div>
+                    <div class="job-title">Quality Assurance Engineer</div>
+                    <div class="job-location">Oral (Uralsk) • Зауыт</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Operations</div>
+                    <div class="job-title">Supply Chain Manager</div>
+                    <div class="job-location">Alatau City • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Security</div>
+                    <div class="job-title">DevSecOps Engineer</div>
+                    <div class="job-location">Astana • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">Security</div>
+                    <div class="job-title">Information Security Analyst</div>
+                    <div class="job-location">Astana • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">General</div>
+                    <div class="job-title">Technical Recruiter</div>
+                    <div class="job-location">Alatau City • Гибрид</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+            <div class="job-card">
+                <div>
+                    <div class="job-dept">General</div>
+                    <div class="job-title">Project Manager (Defense)</div>
+                    <div class="job-location">Astana • Офис</div>
+                </div>
+                <a href="#" class="apply-btn">Толығырақ →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>NURALI DYNAMICS</h4>
+                <p>Қорғаныстың болашағын озық технологиямен, автономиямен және жылдамдықпен құру.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Компания</h5>
+                <ul>
+                    <li><a href="mission.html">Миссия</a></li>
+                    <li><a href="#">Басшылық</a></li>
+                    <li><a href="#">Жаңалықтар</a></li>
+                    <li><a href="careers.html">Жұмыс орны</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Өнімдер</h5>
+                <ul>
+                    <li><a href="#">Atameken OS</a></li>
+                    <li><a href="#">BYRKIT</a></li>
+                    <li><a href="#">SYNKAR</a></li>
+                    <li><a href="#">ELES-X</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Байланыс</h5>
+                <ul>
+                    <li><a href="#">Жалпы сұрақтар</a></li>
+                    <li><a href="#">Медиа байланыстары</a></li>
+                    <li><a href="#">Орналасуы</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nurali Dynamics. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
