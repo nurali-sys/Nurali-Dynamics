@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миссия | Nurali Dynamics</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #333333;
+            --link-color: #aaaaaa;
+            --font-main: 'Arial', sans-serif; /* Using a standard font to match the clean tech look */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            color: var(--link-color);
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--text-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518544806308-c8f32e7ce6a6?q=80&w=2070&auto=format&fit=crop'); /* Placeholder tech background */
+            background-size: cover;
+            background-position: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #ccc;
+        }
+
+        /* Manifesto / Content Section */
+        .content-section {
+            padding: 80px 10%;
+            border-bottom: 1px solid #222;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-left: 4px solid #fff;
+            padding-left: 20px;
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .manifesto-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .quote-box {
+            background-color: #111;
+            padding: 40px;
+            border: 1px solid #333;
+        }
+
+        .quote-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .quote-box p {
+            color: #888;
+        }
+
+        /* Pillars Section */
+        .pillars {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .pillar-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 10%;
+            border-top: 1px solid #222;
+            background-color: #050505;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #666;
+            max-width: 300px;
+        }
+
+        .footer-col h5 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            color: #444;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .manifesto-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* Simplified for demo */
+            .menu-toggle { display: block; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">Nurali Dynamics</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="mission.html" style="color: #fff;">Миссия</a></li>
+                <li><a href="#">Мүмкіндіктер</a></li>
+                <li><a href="#">Жаңалықтар</a></li>
+                <li><a href="#">Карьера</a></li>
+                <li><a href="#">Контактілер</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <section class="hero">
+        <h1>Демократия Арсеналын<br>қайта іске қосу</h1>
+        <p>Қазақстанның және одақтас елдердің әскери мүмкіндіктерін озық автономды жүйелер арқылы жаңғырту.</p>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Біздің Манифест</h2>
+        <div class="manifesto-grid">
+            <div class="manifesto-text">
+                <p>Nurali Dynamics — бұл жай ғана қорғаныс компаниясы емес. Біз болашақтың қауіпсіздік архитектурасын құрушылармыз.</p>
+                <p>Біздің миссиямыз айқын: Қазақстанның егемендігін қорғау және әскери әлеуетін XXI ғасырдың талаптарына сай түбегейлі өзгерту. Біз Alatau City-дің озық таланттарын және инновациялық шешімдерін біріктіре отырып, автономды жүйелердің жаңа дәуірін қалыптастырамыз.</p>
+                <p>Қазіргі геосаяси жағдайда жылдамдық пен технологиялық басымдық — жеңістің басты кілті.</p>
+            </div>
+            <div class="quote-box">
+                <h3>Қорғаныс. Автономия. Болашақ.</h3>
+                <p>"Біз соғыс алаңын цифрлық дәуірге сай қайта құрудамыз. Біздің технологиялар адам өмірін сақтап, стратегиялық басымдықты қамтамасыз етеді."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars">
+        <div class="pillar-card">
+            <h3>Интеллектуалды Автономия</h3>
+            <p>Жасанды интеллект (AI) арқылы басқарылатын жүйелер адамның араласуынсыз күрделі шешімдер қабылдауға қабілетті.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Масштабталатын Өндіріс</h3>
+            <p>Біз прототиптерді ғана емес, нақты ұрыс алаңына дайын, жаппай өндірілетін шешімдерді ұсынамыз.</p>
+        </div>
+        <div class="pillar-card">
+            <h3>Ұлттық Қауіпсіздік</h3>
+            <p>Отандық технологияларды дамыту арқылы сыртқы жеткізушілерге тәуелділікті азайтамыз.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>NURALI DYNAMICS</h4>
+                <p>Қорғаныстың болашағын озық технологиямен, автономиямен және жылдамдықпен құру.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Компания</h5>
+                <ul>
+                    <li><a href="mission.html">Миссия</a></li>
+                    <li><a href="#">Басшылық</a></li>
+                    <li><a href="#">Жаңалықтар</a></li>
+                    <li><a href="#">Жұмыс орны</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Өнімдер</h5>
+                <ul>
+                    <li><a href="#">Atameken OS</a></li>
+                    <li><a href="#">BYRKIT</a></li>
+                    <li><a href="#">SYNKAR</a></li>
+                    <li><a href="#">ELES-X</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Байланыс</h5>
+                <ul>
+                    <li><a href="#">Жалпы сұрақтар</a></li>
+                    <li><a href="#">Медиа байланыстары</a></li>
+                    <li><a href="#">Орналасуы</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nurali Dynamics. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
