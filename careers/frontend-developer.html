@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer | Nurali Dynamics</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #e0e0e0;
+            --accent-color: #333333;
+            --highlight-color: #ffffff;
+            --font-main: 'Arial', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: #fff; }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { font-size: 0.9rem; color: #aaa; text-transform: uppercase; }
+        nav ul li a:hover { color: #fff; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* Page Layout */
+        .container {
+            max-width: 900px;
+            margin: 120px auto 80px;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .back-link:hover { color: #fff; }
+
+        /* Job Header */
+        .job-header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .job-dept {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 30px;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            border-left: 3px solid #fff;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Application Box */
+        .apply-box {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .apply-box h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #000;
+            padding: 15px 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .apply-btn:hover {
+            background-color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 10%;
+            border-top: 1px solid #222;
+            background-color: #050505;
+        }
+        .footer-bottom { 
+            border-top: 1px solid #222; 
+            padding-top: 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            color: #444; 
+            font-size: 0.8rem; 
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .job-meta { flex-direction: column; gap: 10px; }
+            nav ul { display: none; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Nurali Dynamics</a></div>
+        <nav>
+            <ul>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="#">Мүмкіндіктер</a></li>
+                <li><a href="#">Жаңалықтар</a></li>
+                <li><a href="careers.html" style="color: #fff;">Карьера</a></li>
+                <li><a href="#">Контактілер</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <div class="container">
+        <a href="careers.html" class="back-link">← Барлық жұмыс орындарына оралу</a>
+
+        <div class="job-header">
+            <div class="job-dept">Software Engineering</div>
+            <h1>Frontend Developer (React/WebGL)</h1>
+            <div class="job-meta">
+                <div class="meta-item">📍 Astana</div>
+                <div class="meta-item">🏢 Гибрид</div>
+                <div class="meta-item">⏱ Full-time</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Рөл туралы (About the Role)</h3>
+            <p>
+                Сіз біздің басты өніміміз — "Atameken OS" тактикалық басқару интерфейсін жасаумен айналысасыз. Бұл жай ғана веб-сайт емес, бұл операторларға нақты уақыт режимінде ондаған автономды активтерді (дрондар, роботтар) басқаруға мүмкіндік беретін күрделі инженерлік интерфейс.
+            </p>
+            <p>
+                Негізгі басымдық — деректерді визуализациялау. Сіз WebGL және 3D технологияларын қолданып, ұрыс алаңының цифрлық көшірмесін және тактикалық карталарды интерфейске интеграциялайсыз.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Сіздің міндеттеріңіз (Responsibilities)</h3>
+            <ul>
+                <li>React және TypeScript негізінде масштабталатын және өнімді интерфейстерді әзірлеу.</li>
+                <li>Mapbox GL немесе Three.js технологияларын қолданып, 3D карталарды және тактикалық нысандарды визуализациялау.</li>
+                <li>WebSocket арқылы келетін телеметриялық деректерді (кідіріссіз) өңдеу және көрсету.</li>
+                <li>Күрделі деректерді визуализациялау үшін оңтайландырылған Dashboard-тар мен графиктік компоненттерді құру.</li>
+                <li>UX дизайнерлермен бірлесіп, стресстік жағдайдағы операторларға арналған ыңғайлы интерфейс (UI) жасау.</li>
+                <li>Код сапасын жақсарту және тестілеу (Unit, Integration tests).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Талаптар (Requirements)</h3>
+            <ul>
+                <li>React.js және TypeScript бойынша 3+ жылдық тәжірибе.</li>
+                <li>WebGL, Three.js немесе ұқсас 3D графикалық фреймворктармен жұмыс тәжірибесі.</li>
+                <li>State management (Zustand, Redux Toolkit немесе MobX) құралдарын жетік білу.</li>
+                <li>Заманауи CSS (Tailwind CSS, Styled Components) және адаптивті дизайн принциптерін түсіну.</li>
+                <li>Нақты уақыттағы деректермен (WebSockets) жұмыс істей білу.</li>
+                <li>Интерфейс өнімділігін (Performance optimization) талдау және жақсарту дағдылары.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Артықшылық болады (Nice to have)</h3>
+            <ul>
+                <li>Географиялық ақпараттық жүйелермен (GIS) жұмыс тәжірибесі.</li>
+                <li>Canvas API немесе SVG анимацияларын терең білу.</li>
+                <li>Дизайн құралдарымен (Figma) жұмыс істей алу.</li>
+            </ul>
+        </div>
+
+        <div class="apply-box">
+            <h2>Командаға қосылуға дайынсыз ба?</h2>
+            <p>Түйіндемеңізді (CV) және портфолиоңызды (немесе Github) жіберіңіз.</p>
+            <a href="mailto:careers@nuralidynamics.kz?subject=Application for Frontend Developer (React/WebGL)" class="apply-btn">Қазір тапсыру</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <span>© 2026 Nurali Dynamics. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
