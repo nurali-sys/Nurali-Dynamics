@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Control Engineer | Nurali Dynamics</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #e0e0e0;
+            --accent-color: #333333;
+            --highlight-color: #ffffff;
+            --font-main: 'Arial', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: #fff; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { font-size: 0.9rem; color: #aaa; text-transform: uppercase; }
+        nav ul li a:hover { color: #fff; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        .container {
+            max-width: 900px;
+            margin: 120px auto 80px;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .back-link:hover { color: #fff; }
+
+        .job-header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .job-dept {
+            color: #888;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 30px;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            border-left: 3px solid #fff;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .apply-box {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .apply-box h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #000;
+            padding: 15px 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .apply-btn:hover {
+            background-color: #ccc;
+        }
+
+        footer {
+            padding: 60px 10%;
+            border-top: 1px solid #222;
+            background-color: #050505;
+        }
+        .footer-bottom { 
+            border-top: 1px solid #222; 
+            padding-top: 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            color: #444; 
+            font-size: 0.8rem; 
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .job-meta { flex-direction: column; gap: 10px; }
+            nav ul { display: none; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="/">Nurali Dynamics</a></div>
+        <nav>
+            <ul>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="#">Мүмкіндіктер</a></li>
+                <li><a href="#">Жаңалықтар</a></li>
+                <li><a href="careers.html" style="color: #fff;">Карьера</a></li>
+                <li><a href="#">Контактілер</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+
+    <div class="container">
+        <a href="careers.html" class="back-link">← Барлық жұмыс орындарына оралу</a>
+
+        <div class="job-header">
+            <div class="job-dept">Autonomy</div>
+            <h1>Flight Control Engineer</h1>
+            <div class="job-meta">
+                <div class="meta-item">📍 Alatau City</div>
+                <div class="meta-item">🏢 Офис</div>
+                <div class="meta-item">⏱ Full-time</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Рөл туралы (About the Role)</h3>
+            <p>
+                Flight Control Engineer ретінде сіз біздің ұшу аппараттарымыздың "физикалық интеллектісіне" жауапты боласыз. Сіздің міндетіңіз — дронның кез келген ауа райында тұрақты ұшуын, күрделі маневрлерді дәл орындауын және тапсырманы қауіпсіз аяқтауын қамтамасыз ететін алгоритмдерді жасау.
+            </p>
+            <p>
+                Бұл жұмыс аэродинамиканы терең түсінуді, басқару теориясын (Control Theory) және нақты уақыттағы жүйелермен жұмыс істеу дағдысын талап етеді.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Сіздің міндеттеріңіз (Responsibilities)</h3>
+            <ul>
+                <li>Көп роторлы және VTOL (Vertical Take-Off and Landing) аппараттары үшін ұшуды басқару заңдарын (Control Laws) жобалау және енгізу.</li>
+                <li>PID, LQR немесе MPC секілді басқару алгоритмдерін әзірлеу және күйге келтіру (tuning).</li>
+                <li>Сенсорлық синтез (Sensor Fusion): EKF (Extended Kalman Filter) немесе UKF көмегімен аппараттың күйін дәл анықтау алгоритмдерін жасау.</li>
+                <li>MATLAB/Simulink ортасында ұшу динамикасын модельдеу және симуляция жасау.</li>
+                <li>Ұшу аппараттарының автономия деңгейін арттыру үшін навигациялық жолдарды жоспарлау (Path Planning).</li>
+                <li>Нақты ұшу сынақтарына қатысу және ұшу логтарын (telemetry) талдау арқылы жүйені оңтайландыру.</li>
+            </ul>
+        </div>
+
+        
+
+        <div class="section">
+            <h3>Талаптар (Requirements)</h3>
+            <ul>
+                <li>Аэроғарыштық инженерия, Робототехника немесе қолданбалы математика саласындағы білім (BS/MS/PhD).</li>
+                <li>Басқару теориясын (Control Theory) және Ұшу динамикасын (Flight Dynamics) терең түсіну.</li>
+                <li>C++ және Python тілдерінде бағдарламалау тәжірибесі.</li>
+                <li>ArduPilot немесе PX4 ұшу стектерімен жұмыс істеу тәжірибесі.</li>
+                <li>MATLAB/Simulink немесе ұқсас модельдеу құралдарын меңгеру.</li>
+                <li>Сенсорлармен (IMU, GPS, Magnetometer) және олардың қателіктерін өңдеумен жұмыс істей алу.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Артықшылық болады (Nice to have)</h3>
+            <ul>
+                <li>Мәселелерді шешу үшін Machine Learning немесе Reinforcement Learning қолдану тәжірибесі.</li>
+                <li>Ұшқышсыз аппараттарды (UAV) құрастыру және пилоттау дағдылары.</li>
+                <li>ROS (Robot Operating System) платформасын білу.</li>
+            </ul>
+        </div>
+
+        <div class="apply-box">
+            <h2>Аспанды бағындыруға дайынсыз ба?</h2>
+            <p>Түйіндемеңізді және техникалық портфолиоңызды жіберіңіз.</p>
+            <a href="mailto:careers@nuralidynamics.kz?subject=Application for Flight Control Engineer" class="apply-btn">Қазір тапсыру</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <span>© 2026 Nurali Dynamics. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
