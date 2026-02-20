@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мүмкіндіктер | Nurali Dynamics</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #1a1a1a;
+            --secondary-text: #888888;
+            --border-color: #222222;
+            --font-main: 'Arial', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { font-size: 0.85rem; color: var(--secondary-text); text-transform: uppercase; letter-spacing: 1px; }
+        nav ul li a:hover, nav ul li a.active { color: #fff; }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; color: var(--secondary-text); max-width: 800px; }
+
+        /* Main Capabilities Grid */
+        .section { padding: 100px 10%; }
+        .section-header { margin-bottom: 60px; border-left: 4px solid #fff; padding-left: 20px; }
+        .section-header h2 { font-size: 2.5rem; text-transform: uppercase; }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .cap-card {
+            background: var(--accent-color);
+            border: 1px solid var(--border-color);
+            padding: 0;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-card:hover { border-color: #555; transform: translateY(-5px); }
+
+        .cap-img {
+            width: 100%;
+            height: 250px;
+            background-color: #111;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cap-content { padding: 30px; }
+        .cap-tag { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .cap-title { font-size: 1.5rem; margin-bottom: 15px; font-weight: bold; }
+        .cap-desc { color: var(--secondary-text); font-size: 0.95rem; margin-bottom: 20px; }
+
+        .tech-specs {
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .spec-item { font-size: 0.8rem; color: #aaa; }
+        .spec-item span { display: block; color: #fff; font-weight: bold; font-size: 1rem; }
+
+        /* Software Highlight */
+        .software-highlight {
+            background: #050505;
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .soft-text { flex: 1; }
+        .soft-img { flex: 1; background: #111; height: 400px; border: 1px solid #333; }
+
+        /* Footer */
+        footer { padding: 80px 10% 40px; background: #000; border-top: 1px solid var(--border-color); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
+        .footer-col h4 { margin-bottom: 25px; font-size: 0.9rem; text-transform: uppercase; color: #fff; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: #666; font-size: 0.9rem; }
+        .footer-col ul li a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #111; padding-top: 30px; color: #444; font-size: 0.8rem; display: flex; justify-content: space-between; }
+
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .software-highlight { flex-direction: column; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Nurali Dynamics</a></div>
+        <nav>
+            <ul>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="capabilities.html" class="active">Мүмкіндіктер</a></li>
+                <li><a href="#">Жаңалықтар</a></li>
+                <li><a href="careers.html">Карьера</a></li>
+                <li><a href="#">Контактілер</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Озық Технологиялар</h1>
+        <p>Біз заманауи ұрыс алаңында стратегиялық басымдықты қамтамасыз ететін автономды жүйелер мен интеллектуалды бағдарламалық шешімдерді әзірлейміз.</p>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Әуе жүйелері</h2>
+        </div>
+        
+        <div class="capabilities-grid">
+            <div class="cap-card">
+                <div class="cap-img" style="background-image: url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=600');"></div>
+                <div class="cap-content">
+                    <span class="cap-tag">VTOL sUAS</span>
+                    <div class="cap-title">ELES-X</div>
+                    <p class="cap-desc">ISR және тактикалық миссияларға арналған интеллектуалды экспедициялық аппарат. Тік ұшу және қону мүмкіндігі бар.</p>
+                    <div class="tech-specs">
+                        <div class="spec-item">Ұшу уақыты <span>4.5 сағ</span></div>
+                        <div class="spec-item">Радиусы <span>100 км</span></div>
+                        <div class="spec-item">Салмағы <span>25 кг</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cap-card">
+                <div class="cap-img" style="background-image: url('https://images.unsplash.com/photo-1527489377706-5bf97e608852?q=80&w=600');"></div>
+                <div class="cap-content">
+                    <span class="cap-tag">High-Speed Autonomy</span>
+                    <div class="cap-title">Fury</div>
+                    <p class="cap-desc">Жоғары жылдамдықтағы автономды реактивті аппарат. Әуе қорғанысын тексеру және қарсылас нысандарын анықтауға арналған.</p>
+                    <div class="tech-specs">
+                        <div class="spec-item">Жылдамдық <span>700 км/сағ</span></div>
+                        <div class="spec-item">Биіктік <span>10,000 м</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cap-card">
+                <div class="cap-img" style="background-image: url('https://images.unsplash.com/photo-1484662020986-75935d2ebc66?q=80&w=600');"></div>
+                <div class="cap-content">
+                    <span class="cap-tag">Combat UAS</span>
+                    <div class="cap-title">BYRKIT</div>
+                    <p class="cap-desc">Ауыр жүктемелі соққы беруші дрон. Күрделі радиоэлектронды күрес жағдайында жұмыс істеуге бейімделген.</p>
+                    <div class="tech-specs">
+                        <div class="spec-item">Жүк көтергіштігі <span>50 кг</span></div>
+                        <div class="spec-item">Дәлдік <span>< 1м</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="software-highlight">
+        <div class="soft-text">
+            <div class="section-header">
+                <h2>Бағдарламалық қамтамасыз ету</h2>
+            </div>
+            <h3 style="font-size: 2rem; margin-bottom: 20px;">Atameken OS</h3>
+            <p style="color: #888; margin-bottom: 30px; font-size: 1.1rem;">
+                Atameken — бұл мыңдаған деректер нүктелерін бір, түсінікті бейнеге айналдыратын ЖИ-мен жұмыс істейтін платформа. Ол бір операторға бірнеше автономды активтерді бір уақытта басқаруға мүмкіндік береді.
+            </p>
+            <ul style="list-style: none; color: #ccc;">
+                <li style="margin-bottom: 10px;">• Нақты уақыттағы телеметрия</li>
+                <li style="margin-bottom: 10px;">• Нысананы автоматты түрде тану</li>
+                <li style="margin-bottom: 10px;">• Киберқауіпсіздіктің жоғары деңгейі</li>
+            </ul>
+        </div>
+        <div class="soft-img">
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #333; font-weight: bold;">[ UI INTERFACE PREVIEW ]</div>
+        </div>
+    </section>
+
+    
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Құрлық және Су асты жүйелері</h2>
+        </div>
+        
+        <div class="capabilities-grid">
+            <div class="cap-card">
+                <div class="cap-content">
+                    <span class="cap-tag">Heavy Ground System</span>
+                    <div class="cap-title">SYNKAR</div>
+                    <p class="cap-desc">Логистика және барлау миссияларына арналған автономды жерүсті платформасы.</p>
+                </div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-content">
+                    <span class="cap-tag">Underwater AUV</span>
+                    <div class="cap-title">DIVE-XL</div>
+                    <p class="cap-desc">Терең су астындағы қауіптерді анықтауға және мониторинг жүргізуге арналған автономды аппарат.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">NURALI DYNAMICS</div>
+                <p style="color: #666; font-size: 0.9rem;">Қорғаныстың болашағын озық технологиямен, автономиямен және жылдамдықпен құру.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="mission.html">Миссия</a></li>
+                    <li><a href="#">Басшылық</a></li>
+                    <li><a href="careers.html">Жұмыс орны</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Өнімдер</h4>
+                <ul>
+                    <li><a href="#">Atameken OS</a></li>
+                    <li><a href="#">BYRKIT</a></li>
+                    <li><a href="#">SYNKAR</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Байланыс</h4>
+                <ul>
+                    <li><a href="#">Жалпы сұрақтар</a></li>
+                    <li><a href="#">Медиа</a></li>
+                    <li><a href="#">Орналасуы</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nurali Dynamics. Барлық құқықтар қорғалған.</span>
+            <div>
+                <a href="#">Құпиялылық саясаты</a> | <a href="#">Қызмет көрсету шарттары</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
