@@ -108,17 +108,20 @@
     </style>
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <header>
         <a href="index.html" class="logo">Nurali Dynamics</a>
-        <nav>
+        <nav id="navMenu">
             <ul>
                 <li><a href="mission.html" style="color: #fff;">Миссия</a></li>
                 <li><a href="capabilities.html">Мүмкіндіктер</a></li>
                 <li><a href="careers.html">Карьера</a></li>
             </ul>
         </nav>
-        <div class="mobile-menu-btn">☰</div>
+        
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">🌙</button>
+<div data-nav-toggle aria-controls="navMenu" aria-expanded="false" class="mobile-menu-btn">☰</div>
     </header>
 
     <section class="manifesto-hero">
@@ -150,3 +153,7 @@
         </div>
 
         <div class="principles
+
+<script src="app.js" defer></script>
+</body>
+</html>

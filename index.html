@@ -10,18 +10,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <!-- NAV -->
     <header>
         <a href="#" class="logo">Nurali Dynamics</a>
-        <nav>
+        <nav id="navMenu">
             <ul>
                 <li><a href="mission.html">Миссия</a></li>
                 <li><a href="capabilities.html">Мүмкіндіктер</a></li>
                 <li><a href="careers.html">Карьера</a></li>
             </ul>
         </nav>
-        <div class="mobile-menu-btn">☰</div>
+        
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">🌙</button>
+<div data-nav-toggle aria-controls="navMenu" aria-expanded="false" class="mobile-menu-btn">☰</div>
     </header>
 
     <!-- HERO -->
@@ -222,5 +225,6 @@ Alatau City-дің таланттары мен инвестицияларын қ
         </div>
     </footer>
 
+    <script src="app.js" defer></script>
 </body>
 </html>

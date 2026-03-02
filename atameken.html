@@ -307,8 +307,10 @@
             header { flex-direction: column; gap: 1rem; padding: 1.5rem 2rem; }
         }
     </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <div class="scan-overlay"></div>
 
@@ -316,10 +318,13 @@
         <div class="logo">
             <a href="index.html">NURALI DYNAMICS</a>
         </div>
-        <nav class="nav-links">
+        <nav class="nav-links" id="navMenu">
             <a href="atameken.html">ATAMEKEN MESH</a>
         </nav>
-    </header>
+    
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">🌙</button>
+    <button type="button" data-nav-toggle aria-controls="navMenu" aria-expanded="false" class="mobile-menu-btn">☰</button>
+</header>
 
     <main class="container">
         
@@ -409,5 +414,6 @@
         </p>
     </footer>
 
+    <script src="app.js" defer></script>
 </body>
 </html>
