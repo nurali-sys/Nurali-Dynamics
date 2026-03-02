@@ -184,12 +184,14 @@
             .menu-toggle { display: block; }
         }
     </style>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <header>
         <div class="logo"><a href="/">Nurali Dynamics</a></div>
-        <nav>
+        <nav id="navMenu">
             <ul>
                 <li><a href="/mission.html">Миссия</a></li>
                 <li><a href="#">Мүмкіндіктер</a></li>
@@ -198,7 +200,9 @@
                 <li><a href="#">Контактілер</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle">☰</div>
+        
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">🌙</button>
+<div data-nav-toggle aria-controls="navMenu" aria-expanded="false" class="menu-toggle">☰</div>
     </header>
 
     <div class="container">
@@ -275,5 +279,6 @@
         </div>
     </footer>
 
+    <script src="../app.js" defer></script>
 </body>
 </html>
